@@ -1,0 +1,913 @@
+/*----CSS Reset----*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*---- End of reset ----*/
+
+:root {
+    --background: rgba(122, 191, 191, .5);
+	--white-ish: #F2F2F2;
+	--dark-teal: #7ABFBF;
+	--orange: #EB5428;
+	--black-ish: #0D0D0D;
+}
+
+h1,
+h2,
+h3,
+nav a,
+nav span,
+menu li,
+.social-links a,
+#social li,
+#about li,
+footer,
+small {
+    font-family: "Bebas Neue", sans-serif;
+}
+
+p,
+dd,
+li,
+nav,
+input {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+
+dt,
+.rating {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+html {
+    background-color: var(--background);
+}
+
+body {
+    background-color: var(--white-ish);
+    max-width: 414px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "nav nav nav"
+        "header header header"
+        "details details details"
+        "ingredients ingredients ingredients"
+        "directions directions directions"
+        "sides sides sides"
+        "footer footer footer";
+}
+
+main {
+    background-color: var(--white-ish);
+    margin: 0 auto;
+}
+
+section {
+    display: grid;
+}
+
+header {
+    grid-area: header;
+    padding-top: 200px;
+}
+
+header img {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+.nav h2{
+    display: none;
+}
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ol {
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+menu {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+menu li {
+    display: grid;
+    padding: 1em;
+    justify-content: center;
+    font-weight: bold;
+}
+
+menu svg {
+    display: grid;
+    grid-row: 1/2;
+}
+
+menu li a {
+    display: grid;
+    text-align: center;
+    color: var(--orange);
+    justify-items: center;
+}
+
+header img {
+    grid-column: 1/5;
+}
+
+header p {
+    grid-column: 1/5;
+    padding: 10px 0;
+    line-height: 1.5em;
+}
+
+
+.details {
+    grid-area: details;
+
+    line-height: 1.5em;
+    padding: 10px;
+}
+
+dt {
+    display: inline-block;
+    padding-right: 1em;
+}
+
+dd {
+    display: inline;
+}
+
+
+.ingredients {
+    grid-area: ingredients;
+    padding: 10px;
+    line-height: 2em;
+    text-align: left;
+}
+
+.ingredients li {
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+
+.directions {
+    grid-area: directions;
+    padding: 10px;
+
+}
+
+.directions ol {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.directions li {
+    list-style-position: outside;
+    margin-top: 1.5em;
+    line-height: 20px;
+}
+
+
+.sides {
+    grid-area: sides;
+    background-color: var(--dark-teal);
+    padding: 20px;
+
+}
+
+.sides div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding-top: 10px;
+}
+
+.sides h3 {
+    grid-column: 2/4;
+}
+
+.sides img {
+    grid-column: 1/2;
+    grid-row: 1/5;
+    width: 100px;
+    padding-right: 20px;
+    justify-content: center;
+}
+
+.sides p {
+    grid-column: 2/-1;
+
+}
+
+img {
+    max-width: 414px;
+    height: auto;
+}
+
+
+.fa-star {
+    color: var(--white-ish);
+}
+
+.checked {
+    color: var(--orange);
+}
+
+
+.nav {
+    grid-area: header;
+    width: 100%;
+    height: 100px;
+    grid-template-areas: 
+                    "a a a"
+                    "b b b"    ;
+}
+
+nav h2 {
+    display: none;
+}
+nav {
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    grid-template-areas: "a1 a2 a3";
+    align-items: center;
+    
+}
+
+.nav label {
+    cursor: pointer;
+    padding: 28px 20px;
+    display: block;
+    position: relative; 
+    user-select: none;
+    text-align: center;
+}
+
+nav #hidden-menu {
+    overflow: hidden;
+    position: relative;
+    background-color: var(--white-ish);
+    max-width: 100%;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.nav #home svg {
+    overflow-y: hidden;
+    text-overflow: clip;
+    width: 100%;
+    height: 100px;
+    background-color: var(--orange);
+}
+
+.nav li a img {
+    width: 50px;
+}
+
+input:checked~nav #hidden-menu ul{
+    display: grid;
+    max-height: 600px;
+    overflow: visible;
+}
+
+.nav-1 input {
+    display: none;
+}
+
+.nav-1 {
+    grid-area: a1;
+    display: grid;
+    color: var(--black-ish);
+    justify-self: center;
+}
+.nav-1 span {
+    text-align: center;
+}
+
+.nav-2 {
+    grid-area: a2;
+}
+
+.nav-2 #home a {
+    color: transparent;
+}
+
+.nav-3 {
+    grid-area: a3;
+    display: grid;
+    fill: var(--orange);
+    justify-self: center; 
+}
+.nav-3 span svg{
+    display: grid;
+    stroke: var(--orange);
+}
+
+.nav-3 a{
+    color: #0D0D0D;   
+}
+
+.search {
+    grid-area: b;
+}
+
+.search {
+    display: flex;
+    margin: 0 auto;
+}
+
+.search svg {
+    stroke: var(--white-ish);
+}
+
+.search button {
+    background-color: var(--orange);
+}
+
+fieldset {
+    display: none;
+}
+form {
+    display: flex;
+}
+
+.nav div input,
+button {
+    border: var(--orange);
+    border-style: solid;
+    height: 58px;
+    align-self: center;
+}
+
+
+.social {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.social h2,
+.social h3 {
+    display: none;
+}
+
+.social svg {
+    display: inline-block;
+}
+
+.social-links li {
+    display: inline-block;
+    margin: 0 auto;
+    width: 20%;
+}
+
+.social-links li a {
+    color: var(--orange);
+}
+
+
+footer {
+    grid-area: footer;
+    background-color: var(--white-ish);
+    justify-content: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+footer img {
+    grid-row: 1/2;
+    justify-self: center;
+    align-items: center;
+    width: 175px;
+    padding-bottom: 20px;
+}
+footer h3 {
+    display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 768px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "nav nav nav nav"
+            "header header header header"
+            "details details details details"
+            "ingredients directions directions directions"
+            "ingredients directions directions directions"
+            "sides sides sides sides"
+            "footer footer footer footer"
+    }
+
+    .nav {
+        grid-area: nav;
+        width: 768px;
+        display: grid;
+        grid-template-areas:    "a a a a"
+                                "b b b b";
+    }
+    nav {
+        grid-area: a;
+        display: grid;
+        grid-template-columns: 10% auto 20%;
+        grid-template-areas: 
+                        "a1 a2 a3";
+    }
+    .nav-1 {
+        display: none;
+    }
+    .nav-2 {
+        grid-area: a1;
+    }
+    .nav-2 #home a {
+        color: transparent;
+    }
+    .nav-3 {
+        grid-area: a3;
+    }
+    nav #hidden-menu {
+        display: block;
+        overflow: visible;
+    }
+    nav #hidden-menu ul{
+        background-color: var(--white-ish);
+        margin-top: -21px;
+        display: grid;
+        width: 768px;
+        height: 100px;
+        grid-template-rows: 1fr;
+        grid-template-columns: auto;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+    }
+    nav #hidden-menu ul li{
+        width: 50px;
+        grid-row: 1;
+    }
+    nav #hidden-menu ul li a{
+        color: var(--orange);
+    }
+    
+    .search {
+        grid-area: a;
+        position: relative;
+        left: 70px;
+        justify-self: end;
+        align-self: center;
+    }
+
+    nav ul ul{
+        overflow: visible;
+        display: grid;
+        box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.5);
+    }
+
+    
+    header {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 50px repeat(4, auto);
+    }
+
+    header h1 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    header img {
+        grid-row: 2/3;
+        grid-column: 1/-1;
+        max-width: 100%;
+        z-index: 0;
+    }
+
+    header menu {
+        height: 88px;
+        grid-column: 1/-1;
+        grid-row: 2/3;
+        z-index: 2;
+        background-color: var(--white-ish);
+    }
+
+    header p {
+        padding: 20px;
+    }
+
+
+    .details {
+        display: grid;
+        justify-content: center;
+        
+    }
+
+ 
+    .ingredients {
+        grid-area: ingredients;
+    }
+
+
+    .directions {
+        grid-area: directions;
+    }
+
+
+    .sides-grid {
+        display: grid;
+        grid-template-areas:
+            "one two"
+            "three four";
+        gap: 5px;
+
+    }
+
+    footer,
+    .social {
+        padding-top: 20px;
+    }
+
+    #footer{
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "a b";
+    }
+    #footer #copyright{
+        grid-area: a;
+    }
+    #footer .social{
+        grid-area: b;
+    }
+    
+}
+
+@media screen and (min-width: 1280px) {
+    body {
+        max-width: 1280px;
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-areas:
+            "nav nav nav nav nav nav nav nav nav"
+            "header header header header header header header header header"
+            "details details details details details details details details details"
+            "ingredients ingredients directions directions directions directions directions directions directions"
+            "ingredients ingredients directions directions directions directions directions directions directions"
+            "sides sides sides sides sides sides sides sides sides"
+            "footer footer footer footer footer footer footer footer footer"
+;
+    }
+  
+    .nav {
+    grid-area: nav;
+    width: 1280px;
+    display: grid;
+    grid-template-areas: 
+                        "a"
+                        "b";
+    }
+
+    nav {
+        grid-area: a;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 10% auto 10%;
+        grid-template-areas: "a1 a2 a3";
+        box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.5);
+    }
+
+    .nav-2 {
+        grid-area: a1;
+    }
+
+    .nav-3 {
+        grid-area: a3;
+    }
+
+    nav #hidden-menu ul {
+        background-color: var(--white-ish);
+        display: grid;
+        position: relative;
+        top:-100px;
+        left: 256px;
+        width: 768px;
+        height: 100px;
+        grid-template-rows: 1fr;
+        grid-template-columns: auto;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: none;
+    }
+
+    .search {
+        grid-area: b;
+        text-align: center;
+        margin: 0 auto;
+        padding: 50px;
+    }
+
+    
+    header {
+        padding-top: 150px;
+        grid-template-columns: 10% 40% repeat(2, 25%);
+        grid-template-rows: 88px repeat(3, auto);
+    }
+
+    header h1 {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        justify-self: center;
+    }
+
+    header menu {
+        grid-row: 2/4;
+        grid-column: 1/2;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 90px) auto;
+        border-radius: 2px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: var(--orange);
+        height: auto;
+    }
+
+    header img {
+        grid-column: 2/3;
+        grid-row: 2/4;
+    }
+
+    header p {
+        grid-column: 3/-1;
+    }
+
+
+    .details {
+        max-width: 1280px;
+        background-color: var(--black-ish);
+        color: var(--dark-teal);
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 50px);
+    }
+
+    .details h2 {
+        grid-column: 2/5;
+    }
+
+    .details dl {
+        grid-row: 2/3;
+        grid-column: 1/-1;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: "one two three four five";
+        align-content: space-around;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .details dt {
+        display: block;
+        text-align: center;
+    }
+
+    .details dd {
+        display: block;
+    }
+
+
+    .sides-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .sides h3 {
+        grid-column: 1/3;
+    }
+
+    .sides div {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+        padding-top: 10px;
+        justify-items: left;
+    }
+
+    .sides img {
+        width: 90%;
+        grid-column: 1/-1;
+        align-self: center;
+    }
+
+    .sides p {
+        grid-column: 1/-1;
+    }
+
+    footer {
+        display: grid;
+        grid-template-areas: "one two";
+        padding-left: 20px;
+        justify-content: left;
+    }
+    #footer #copyright{
+        display: grid;
+        grid-template-areas: 
+                        "a b "
+                        "a d ";
+                        justify-content: start;
+    }
+    #footer img{
+        grid-area: a;
+    }
+    #footer #copyright p{
+        grid-area: b;
+        justify-self: start
+    }
+}
+
+
+@media print {
+    
+    .header, .details, .directions, .ingredients, .sides, .social{
+        display: block;
+    }
+
+    body {
+        margin: 0.5in;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        max-width: fit-content;
+        text-align: left;
+        grid-template-areas: 
+                    "a a a a"
+                    "b c c e"
+                    "d d d d"
+                    "g g g g"
+                    "f f f f";
+                    background-color: #ffffff;
+    }
+    
+
+    header {
+        grid-area: a;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 15px
+    }
+
+    .details {
+        grid-area: b;
+        padding: 0;
+    }
+
+    .ingredients {
+        grid-area: c;
+        line-height: 1.5em;
+        padding: 0;
+    }
+
+    menu {
+        display: none;
+    }
+
+    .directions {
+        grid-area: d;
+        padding: 0;
+    }
+
+    .directions li {
+        margin-top: 0;
+    }
+
+    .sides {
+        grid-area: e;
+        padding: 0;
+        background-color: #ffffff;
+    }
+    
+    #footer {
+        grid-area: f;
+    }
+
+    .social {
+        grid-area: g;
+    }
+
+    .social-links ul {
+        display: grid;
+        grid-template-areas: "1 2 3 4";
+        align-content: baseline;
+    }
+
+    .social-links ul li {
+        display: grid;
+        justify-content: center;
+    }
+
+    img {
+        display: none;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .social svg {
+        display: none;
+    }
+
+    a:after {
+        content: " (" attr(href) ")";
+    }
+}
